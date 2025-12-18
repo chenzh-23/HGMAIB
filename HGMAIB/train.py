@@ -27,17 +27,6 @@ args = parser.parse_args()
 
 prefix = "lr" + str(args.lr) + "_wd" + str(args.wd) + "_h" + str(args.n_hid) + \
          "_drop" + str(args.dropout) + "_epoch" + str(args.epochs) + "_cuda" + str(args.gpu)
-#Luo_AMG
-archs = {
-    "source":([[6, 1, 0]], [[9, 0, 0]]),
-    "target": ([[4, 5, 1]], [[7, 1, 13]])
-}
-
-#Zheng_AMG
-# archs = {
-#     "source": ([[12, 12, 0]], [[12, 0, 13]]),
-#     "target": ([[7, 7, 1]], [[12, 1, 13]])
-# }
 
 def main():
     torch.cuda.set_device(args.gpu)
