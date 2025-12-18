@@ -7,7 +7,7 @@ Execute the `train_search.py` script to search for the optimal adaptive meta-gra
 Use the `train.py` script to perform drug–target interaction (DTI) prediction based on the selected adaptive meta-graph. This script applies the optimal meta-graph obtained from the previous search stage to generate 
 predictions and output results. Following these steps sequentially ensures reproducibility of the results reported in our study. For further details on parameter settings or data preparation, please refer to the accompanying code documentation and instructions.
 
-## Environment
+## Requirments
 ```python
 python = 3.8 
 pytorch = 1.11+cu113 
