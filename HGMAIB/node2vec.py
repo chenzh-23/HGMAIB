@@ -6,11 +6,11 @@ from gensim.models import Word2Vec
 class Node2Vec:
     def __init__(self, graph, dimensions=128, walk_length=80, num_walks=10, p=1, q=1, workers=1):
         self.graph = graph
-        self.dimensions = dimensions #嵌入向量维度
-        self.walk_length = walk_length#每次随机游走的长度
-        self.num_walks = num_walks#每个节点开始的随机游走次数
-        self.p = p#用于控制随机游走的归回概率
-        self.q = q#用于控制随机游走的远离或靠近概率
+        self.dimensions = dimensions 
+        self.walk_length = walk_length
+        self.num_walks = num_walks
+        self.p = p
+        self.q = q
         self.workers = workers
 
         self.walks = []
