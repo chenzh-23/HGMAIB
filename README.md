@@ -14,4 +14,4 @@ Run the `preprocess.py` script to preprocess the raw datasets and construct the 
 
 Run the `train_search.py` script to search for the optimal adaptive meta-graph. 
 
-Run the `train.py` script to  train the HGMAIB model, and obtain prediction results along with evaluation metrics.
+Run the `train.py` script to train the HGMAIB model on the selected meta-graph, perform drug–target interaction prediction, and obtain the results with evaluation metrics.
