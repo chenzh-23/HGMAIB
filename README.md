@@ -14,7 +14,7 @@ scikit-learn = 1.3.2
 
 2.Train and Evaluate Run the `train.py` script to train the HGMAIB model on the selected meta-graph, perform drug–target interaction prediction, and obtain the results with evaluation metrics.
 
-#Note on Architecture Search (Important)
+# Note on Architecture Search 
 Following the strategy in AMGDTI, we employ a lightweight proxy model (implemented in train_search.py) to efficiently search for optimal meta-paths. This proxy model uses a simplified backbone to reduce computational overhead during the search phase.
 
 The discovered optimal paths are then transferred to the full HGMAIB model (implemented in train.py), which incorporates the Hierarchical Gated Multi-Head Attention and Information Bottleneck modules for final prediction.
