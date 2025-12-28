@@ -28,14 +28,30 @@ args = parser.parse_args()
 prefix = "lr" + str(args.lr) + "_wd" + str(args.wd) + "_h" + str(args.n_hid) + \
          "_drop" + str(args.dropout) + "_epoch" + str(args.epochs) + "_cuda" + str(args.gpu)
 
+# Note: For reproducibility and efficiency, we hardcode the best architecture
+# parameters found in the paper instead of running the search process.
+
+# Case A: Default for Luo Dataset
+# ----------------------------------------------------------------
+archs = {
+      "source":([[6, 1, 0]], [[9, 0, 0]]),
+      "target": ([[4, 5, 1]], [[7, 1, 13]])
+        }
+# ----------------------------------------------------------------
+# Case B: Uncomment below for Zheng Dataset
+# ----------------------------------------------------------------
+# archs = {
+#     "source":([[6, 1, 0]], [[9, 0, 0]]),
+#     "target": ([[4, 5, 1]], [[7, 1, 13]])
+#         }
+    
 def main():
     torch.cuda.set_device(args.gpu)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
     record_path = "./infer_records.txt"
-
-    archs["source"], archs["target"] = train_search.search_main()
+  
     steps_s = [len(meta) for meta in archs["source"][0]]
     steps_t = [len(meta) for meta in archs["target"][0]]
 
